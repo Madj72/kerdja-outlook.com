@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class FinancialApplication {
+
+	public static void main(String[] args) {
+
+		informations();
+	}
+
+	public static void informations() {
+
+		Scanner src = new Scanner(System.in);
+		System.out.println("Enter employee's name:");
+		String name = src.nextLine();
+		System.out.println("Enter number of hours worked in a week:");
+		float weekHours = src.nextFloat();
+		System.out.println("Enter hourly pay rate:");
+		float hourlyPay = src.nextFloat();
+		System.out.println("Enter federal tax withholding rate: ");
+		float federalTaxRate = src.nextFloat();
+		System.out.println("Enter state tax withholding rate:");
+		float stateTaxRate = src.nextFloat();
+		
+		System.out.println("");
+		
+	
+		System.out.println(" Employee Name : "+name);
+		System.out.println("Hours Worked :"+weekHours);
+		System.out.println("Pay Rate :"+hourlyPay);
+		float grossPay = (weekHours*hourlyPay);
+		System.out.println("Gross Pay :"+grossPay);
+		System.out.println();
+		System.out.println("Deductions :");
+		float federalTax = (grossPay *20)/100;
+		System.out.println("Federal Withholding ("+federalTaxRate+" %) : "+ "$"+federalTax);
+		float stateTax = (grossPay*9)/100;
+		System.out.println("State Withholding ("+stateTaxRate +" %) : "+ "$"+stateTax);
+		float totalDeduction = federalTax + stateTax;
+		System.out.println("Total Deduction : "+ "$"+totalDeduction);
+		float netPay = grossPay - federalTax - stateTax;
+		System.out.println("Net Pay : "+ "$"+netPay);
+}
+
+}
+
+
+
+/*
+ * 
+ * 
+ * Enter employee's name: 
+ * Enter number of hours worked in a week: 
+ * Enter hourly pay rate: 
+ * Enter federal tax withholding rate: 
+ * Enter state tax withholding rate:
+ * 
+ * 
+ */
